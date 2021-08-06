@@ -11,7 +11,13 @@ export class MapComponent implements AfterViewInit {
   private markerGroup;
   private lineGroup;
   private lastMarker;
-  private mapLabels;
+  private labelCoordinates;
+  private squareIcon = L.icon({
+    iconUrl: '../../assets/square.png',
+    iconSize: [4,4],
+    /*iconAnchor: [0,0],*/
+    popupAnchor: [0,0],
+  });
   public pathDistance = 0;
   public coordsList;
   public coordMessage;
@@ -20,7 +26,8 @@ export class MapComponent implements AfterViewInit {
     this.map = L.map('map', {
       center: [35.843214, -81.320358],
       zoom: 17,
-      scrollWheelZoom: false
+      scrollWheelZoom: false,
+      zoomControl: false,
     });
     this.markerGroup = L.layerGroup().addTo(this.map)
     this.lineGroup = L.layerGroup().addTo(this.map);
@@ -48,7 +55,7 @@ export class MapComponent implements AfterViewInit {
 
   constructor() {
     this.coordsList = [];
-    this.mapLabels = [];
+    this.labelCoordinates = [];
     this.coordMessage = "";
   }
 
