@@ -1,0 +1,13 @@
+<div class="map-container">
+  <div class="map-frame">
+    <div id="map"></div>
+  </div>
+  <div>
+    <span>Total Distance (ft): {{pathDistance}}</span>
+  </div>
+  <div *ngFor="let coord of coordsList">
+    <span>Lat: {{coord.lat}}; Long: {{coord.lng}}</span>
+  </div>
+  <button (click)="clearCoordsList()">Clear List</button>
+</div>
+
