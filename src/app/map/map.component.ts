@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
+import {environment} from "../../environments/environment";
 
 class MapLabel {
   constructor(coords, label, side) {
@@ -32,17 +33,17 @@ export class MapComponent implements AfterViewInit {
   private lastMarker;
   private startingMapMarkerGroup;
   private natoIcon = L.icon({
-    iconUrl: '../../assets/bluesquare.png',
+    iconUrl: `${environment.deployUrl}assets/bluesquare.png`,
     iconSize: [8,8],
     popupAnchor: [0,0],
   });
   private warsawIcon = L.icon({
-    iconUrl: '../../assets/redsquare.png',
+    iconUrl: `${environment.deployUrl}assets/redsquare.png`,
     iconSize: [8,8],
     popupAnchor: [0,0],
   });
   private neutralIcon = L.icon({
-    iconUrl: '../../assets/yellowsquare.png',
+    iconUrl: `${environment.deployUrl}yellowsquare.png`,
     iconSize: [8,8],
     popupAnchor: [0,0],
   });
