@@ -13,9 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref" : "/leaflet-map/",
-            "deployUrl": "/leaflet-map/",
-            "outputPath": "dist/leaflet-map",
+            "baseHref" : "/fuldagapmap/",
+            "deployUrl": "/fuldagapmap/",
+            "outputPath": "dist/docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
