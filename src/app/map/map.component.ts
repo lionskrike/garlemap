@@ -43,7 +43,7 @@ export class MapComponent implements AfterViewInit {
     popupAnchor: [0,0],
   });
   private neutralIcon = L.icon({
-    iconUrl: `${environment.deployUrl}yellowsquare.png`,
+    iconUrl: `${environment.deployUrl}assets/yellowsquare.png`,
     iconSize: [8,8],
     popupAnchor: [0,0],
   });
