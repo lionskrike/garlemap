@@ -4,9 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 30px;
-  height: 75%;
-  width: 95%;
+  padding: 30px;
 }
 
 .map-frame {
