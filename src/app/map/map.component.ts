@@ -25,10 +25,10 @@ export class MapComponent implements AfterViewInit {
       minZoom: 1,
       crs: L.CRS.Simple
     }).setView([0, 0], 1);
-    this.map.setMaxBounds(new L.LatLngBounds([0,1024], [1024,0]));
+    this.map.setMaxBounds(new L.LatLngBounds([0,512], [512,0]));
 
     let imageUrl = `${environment.deployUrl}assets/images/garlemald-map.png`;
-    let imageBounds = [[1024,0],[0,1024]];
+    let imageBounds = [[512,0],[0,512]];
 
     L.imageOverlay(imageUrl, imageBounds).addTo(this.map);
   }
