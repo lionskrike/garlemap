@@ -32,5 +32,21 @@ export class MapComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.initMap();
+
+    this.map.on("click", event => {
+      const coord = event.latlng; // get the coordinates
+      console.log(coord);
+      this.coordMessage = "X: " + coord.lat + ". Y: " + coord.lng;
+
+      // this.coordsList.push(coord);
+      // let lat = coord.lat;
+      // let lng = coord.lng;
+      // let newMarker = L.circleMarker([lat, lng], {radius: 2}).addTo(this.userMarkerGroup);
+      // if(this.lastMarker !== undefined) {
+      //   this.drawLine(newMarker, this.lastMarker);
+      //   this.pathDistanceFt += MapComponent.getDistanceFeet(this.coordsList[this.coordsList.length-1],this.coordsList[this.coordsList.length-2]);
+      // }
+      // this.lastMarker = newMarker;
+    });
   }
 }
