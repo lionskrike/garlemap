@@ -10,10 +10,6 @@ import {environment} from "../../environments/environment";
 
 export class MapComponent implements AfterViewInit {
   private map;
-  private userMarkerGroup;
-  private lineGroup;
-  private lastMarker;
-  public pathDistanceFt = 0;
   public coordsList;
   public coordMessage;
 
@@ -25,20 +21,12 @@ export class MapComponent implements AfterViewInit {
       minZoom: 1,
       crs: L.CRS.Simple
     }).setView([0, 0], 1);
-    this.map.setMaxBounds(new L.LatLngBounds([0,512], [512,0]));
+    this.map.setMaxBounds(new L.LatLngBounds([0,1024], [1024,0]));
 
     let imageUrl = `${environment.deployUrl}assets/images/garlemald-map.png`;
-    let imageBounds = [[512,0],[0,512]];
+    let imageBounds = [[1024,0],[0,1024]];
 
     L.imageOverlay(imageUrl, imageBounds).addTo(this.map);
-  }
-
-  public clearCoordsList(): void {
-    this.coordsList = [];
-    this.userMarkerGroup.clearLayers();
-    this.lineGroup.clearLayers();
-    this.pathDistanceFt = 0;
-    this.lastMarker = undefined;
   }
 
   constructor() {
