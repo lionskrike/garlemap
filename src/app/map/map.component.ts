@@ -10,17 +10,15 @@ import {environment} from "../../environments/environment";
 
 export class MapComponent implements AfterViewInit {
   private map;
-  public coordsList;
-  public coordMessage;
-
-
+  public coordsList = [];
+  public coordMessage = "";
 
   private initMap(): void {
     this.map = L.map('map', {
       maxZoom: 24,
       minZoom: 1,
       crs: L.CRS.Simple
-    }).setView([0, 0], 1);
+    }).setView([1024, 0], 1);
     this.map.setMaxBounds(new L.LatLngBounds([0,1024], [1024,0]));
 
     let imageUrl = `${environment.deployUrl}assets/images/garlemald-map.png`;
@@ -30,8 +28,6 @@ export class MapComponent implements AfterViewInit {
   }
 
   constructor() {
-    this.coordsList = [];
-    this.coordMessage = "";
   }
 
   ngAfterViewInit(): void {
