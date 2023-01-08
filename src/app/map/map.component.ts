@@ -37,6 +37,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    console.log('init map');
     this.initMap();
 
     this.map.on("click", event => {
