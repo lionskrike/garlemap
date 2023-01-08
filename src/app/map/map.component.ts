@@ -66,6 +66,7 @@ export class MapComponent implements AfterViewInit {
       const newLabel = L.marker(label.coords, {icon: MarkersImagesMap.get(label.id)});
       newLabel.bindTooltip(label.label);
       newLabel.addTo(this.startingMapMarkerGroup);
+      console.log(newLabel);
     })
   }
 }
