@@ -34,6 +34,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   constructor() {
+    console.log('constructed');
   }
 
   ngAfterViewInit(): void {
