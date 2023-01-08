@@ -34,11 +34,9 @@ export class MapComponent implements AfterViewInit {
   }
 
   constructor() {
-    console.log('constructed');
   }
 
   ngAfterViewInit(): void {
-    console.log('init map');
     this.initMap();
 
     this.map.on("click", event => {
