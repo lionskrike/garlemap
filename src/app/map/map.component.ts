@@ -18,6 +18,7 @@ export class MapComponent implements AfterViewInit {
 
   private initMap(): void {
     // map
+    console.log('initializing map');
     this.map = L.map('map', {
       maxZoom: 24,
       minZoom: 1,

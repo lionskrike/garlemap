@@ -2,7 +2,7 @@ import {Marker} from "./marker";
 import * as L from 'leaflet';
 
 const TertiumIcon = L.icon({
-  iconUrl: `assets/garlemald.png`,
+  iconUrl: `assets/images/tertium.svg`,
   iconSize: [40,40],
   popupAnchor: [0,0],
 })
