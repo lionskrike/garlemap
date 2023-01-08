@@ -1,6 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
-import {environment} from "../../environments/environment";
 import { Marker } from "./entities/marker";
 import { MapLabel } from "./types/map-label";
 import {MarkersImagesMap} from "./entities/markers-images-map";
