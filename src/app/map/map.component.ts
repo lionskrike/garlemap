@@ -8,10 +8,17 @@ import {environment} from "../../environments/environment";
   styleUrls: ['./map.component.css']
 })
 
+
+
 export class MapComponent implements AfterViewInit {
   private map;
   public coordsList = [];
   public coordMessage = "";
+  private neutralIcon = L.icon({
+    iconUrl: `${environment.deployUrl}assets/yellowsquare.png`,
+    iconSize: [8,8],
+    popupAnchor: [0,0],
+  });
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -48,5 +55,16 @@ export class MapComponent implements AfterViewInit {
       // }
       // this.lastMarker = newMarker;
     });
+  }
+
+  private initMapLabels(): void {
+    let mapLabels: MapLabel[] = [
+      new MapLabel(new L.LatLng(35.840745290176585, -81.32055248264838), "DZ 3", Side.Nato),
+    ]
+
+    mapLabels.forEach(label => {
+      let markerIcon = this.neutralIcon;
+      L.marker(label.coords, {icon: markerIcon}).bindTooltip(label.label).addTo(this.startingMapMarkerGroup);
+    })
   }
 }
