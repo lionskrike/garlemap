@@ -42,7 +42,7 @@ export class MapComponent implements AfterViewInit {
 
     this.map.on("click", event => {
       const coord = event.latlng; // get the coordinates
-      console.log(coord);
+      // console.log(coord);
       this.coordMessage = "Lat: " + coord.lat + ". Long: " + coord.lng;
 
       // this.coordsList.push(coord);
@@ -62,7 +62,7 @@ export class MapComponent implements AfterViewInit {
       new MapLabel(new L.LatLng(704, 763), 'Tertium', Marker.Tertium),
       new MapLabel(new L.LatLng(286, 320), 'Camp Broken Glass', Marker.Generic),
       new MapLabel(new L.LatLng(830, 400), 'Senaculum Imperialis', Marker.Generic),
-      new MapLabel(new L.LatLng(425, 801), 'Victor\'s Spoils', Marker.Generic),
+      new MapLabel(new L.LatLng(425, 801), 'Victors\' Spoils', Marker.Generic),
       new MapLabel(new L.LatLng(797, 716), 'Forum Solius', Marker.Generic)
     ]
 
