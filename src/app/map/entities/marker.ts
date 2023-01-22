@@ -1,3 +1,4 @@
 export const enum Marker {
-  Tertium
+  Tertium,
+  Generic,
 }

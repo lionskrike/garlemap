@@ -60,13 +60,16 @@ export class MapComponent implements AfterViewInit {
   private initMapLabels(): void {
     let mapLabels: MapLabel[] = [
       new MapLabel(new L.LatLng(704, 763), 'Tertium', Marker.Tertium),
+      new MapLabel(new L.LatLng(286, 320), 'Camp Broken Glass', Marker.Generic),
+      new MapLabel(new L.LatLng(830, 400), 'Senaculum Imperialis', Marker.Generic),
+      new MapLabel(new L.LatLng(425, 801), 'Victor\'s Spoils', Marker.Generic),
+      new MapLabel(new L.LatLng(797, 716), 'Forum Solius', Marker.Generic)
     ]
 
     mapLabels.forEach(label => {
       const newLabel = L.marker(label.coords, {icon: MarkersImagesMap.get(label.id)});
       newLabel.bindTooltip(label.label);
       newLabel.addTo(this.startingMapMarkerGroup);
-      console.log(newLabel);
     })
   }
 }
