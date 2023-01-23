@@ -1,8 +1,9 @@
-import { Component, AfterViewInit } from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import * as L from 'leaflet';
-import { Marker } from "./entities/marker";
-import { MapLabel } from "./types/map-label";
 import {MarkersImagesMap} from "./entities/markers-images-map";
+import {MarkerPresets} from "./entities/map-markers";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {MarkerModalComponent} from "../marker-modal/marker-modal.component";
 
 @Component({
   selector: 'app-map',
@@ -17,7 +18,7 @@ export class MapComponent implements AfterViewInit {
   private startingMapMarkerGroup;
 
   private initMap(): void {
-    // map
+    // map init
     console.log('initializing map');
     this.map = L.map('map', {
       maxZoom: 24,
@@ -34,7 +35,9 @@ export class MapComponent implements AfterViewInit {
     this.initMapLabels();
   }
 
-  constructor() {
+  constructor(
+    private modalService: NgbModal
+  ) {
   }
 
   ngAfterViewInit(): void {
@@ -42,7 +45,6 @@ export class MapComponent implements AfterViewInit {
 
     this.map.on("click", event => {
       const coord = event.latlng; // get the coordinates
-      // console.log(coord);
       this.coordMessage = "Lat: " + coord.lat + ". Long: " + coord.lng;
 
       // this.coordsList.push(coord);
@@ -57,19 +59,22 @@ export class MapComponent implements AfterViewInit {
     });
   }
 
-  private initMapLabels(): void {
-    let mapLabels: MapLabel[] = [
-      new MapLabel(new L.LatLng(704, 763), 'Tertium', Marker.Tertium),
-      new MapLabel(new L.LatLng(286, 320), 'Camp Broken Glass', Marker.Generic),
-      new MapLabel(new L.LatLng(830, 400), 'Senaculum Imperialis', Marker.Generic),
-      new MapLabel(new L.LatLng(425, 801), 'Victors\' Spoils', Marker.Generic),
-      new MapLabel(new L.LatLng(797, 716), 'Forum Solius', Marker.Generic)
-    ]
+  private openModal(event) {
+    const marker = MarkerPresets.find((marker) => {
+      if(marker.coords === event.latlng) {
+        return marker;
+      }
+    })
+    const modalRef = this.modalService.open(MarkerModalComponent);
+    modalRef.componentInstance.markerLabel = marker.label;
+  }
 
-    mapLabels.forEach(label => {
-      const newLabel = L.marker(label.coords, {icon: MarkersImagesMap.get(label.id)});
-      newLabel.bindTooltip(label.label);
-      newLabel.addTo(this.startingMapMarkerGroup);
+  private initMapLabels(): void {
+    MarkerPresets.forEach(label => {
+      const newMarker = L.marker(label.coords, {icon: MarkersImagesMap.get(label.id)});
+      newMarker.bindTooltip(label.label);
+      newMarker.on('click', (event) => this.openModal(event));
+      newMarker.addTo(this.startingMapMarkerGroup);
     })
   }
 }
