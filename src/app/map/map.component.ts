@@ -2,7 +2,7 @@ import {AfterViewInit, Component} from '@angular/core';
 import * as L from 'leaflet';
 import {MarkersImagesMap} from "./entities/markers-images-map";
 import {MarkerPresets} from "./entities/map-markers";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal, NgbModalOptions} from "@ng-bootstrap/ng-bootstrap";
 import {MarkerModalComponent} from "../marker-modal/marker-modal.component";
 
 @Component({
@@ -60,12 +60,18 @@ export class MapComponent implements AfterViewInit {
   }
 
   private openModal(event) {
+    const modalOptions: NgbModalOptions = {
+      centered: true,
+      size: 'xl',
+      scrollable: true
+    }
+
     const marker = MarkerPresets.find((marker) => {
       if(marker.coords === event.latlng) {
         return marker;
       }
     })
-    const modalRef = this.modalService.open(MarkerModalComponent);
+    const modalRef = this.modalService.open(MarkerModalComponent, modalOptions);
     modalRef.componentInstance.markerLabel = marker.label;
   }
 
