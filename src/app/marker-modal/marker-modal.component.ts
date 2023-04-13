@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import { MarkerModalConfig } from './entities/marker-modal-config';
 
 @Component({
   selector: 'app-marker-modal',
@@ -7,7 +8,7 @@ import {Component, Input} from '@angular/core';
 })
 export class MarkerModalComponent {
   @Input() markerLabel: string;
-  markerModalConfig = {
+  markerModalConfig: MarkerModalConfig = {
     imageUrl: 'assets/images/tertium.svg',
     text: [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
