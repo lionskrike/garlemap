@@ -31,7 +31,7 @@ const markerText = {
     'The former residence of Jullus pyr Norbanus and his family.'
   ],
   juturnaPlatformG: [
-    'Part of the ceruleum extraction infrastructure together with Monitoring Station G, the platform was partially restored to opration, renewing flow of refined ceruleum to the capital.',
+    'Part of the ceruleum extraction infrastructure together with Monitoring Station G, the platform was partially restored to operation, renewing flow of refined ceruleum to the capital.',
     'Inhabited, among others, by one Calavius lux Atavist, a Pureblood communications specialist and his Hrothgar friend and colleague, Halatius jen Arvina.'
   ],
   palatiumNovum: [
@@ -49,7 +49,7 @@ const markerText = {
   ],
   enceladeum: [
     'Part of large industrial complex, currently in ruins, although subterranean infrastructure is still in good repair.',
-    'Houses the lunar teleporter, access to which is controlled by the Alliance.'
+    'There is a subway route in the bowels of the Enceladeum that leads directly into the Palace.'
   ],
   forumPatens: [
     'An Alliance-controlled supply dump garrisoned by the soldiers of the Ist legion.'
