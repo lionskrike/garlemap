@@ -4,6 +4,7 @@ import {MarkersImagesMap} from "./entities/markers-images-map";
 import {MarkerPresets} from "./entities/map-markers";
 import {NgbModal, NgbModalOptions} from "@ng-bootstrap/ng-bootstrap";
 import {MarkerModalComponent} from "../marker-modal/marker-modal.component";
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-map',
@@ -18,13 +19,15 @@ export class MapComponent implements AfterViewInit {
   private startingMapMarkerGroup;
 
   private initMap(): void {
+    const initialZoom = this.deviceService.isMobile ? 0 : 1
+
     // map init
     console.log('initializing map');
     this.map = L.map('map', {
       maxZoom: 3,
       minZoom: 0,
       crs: L.CRS.Simple
-    }).setView([1024, 0], 1);
+    }).setView([1024, 0], initialZoom);
     this.map.setMaxBounds(new L.LatLngBounds([0,1024], [1024,0]));
     let imageUrl = `assets/images/garlemald-map.png`;
     let imageBounds = [[1024,0],[0,1024]];
@@ -36,7 +39,8 @@ export class MapComponent implements AfterViewInit {
   }
 
   constructor(
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private deviceService: DeviceDetectorService
   ) {
   }
 
