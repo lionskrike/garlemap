@@ -1,11 +1,13 @@
-<div class="header-container">
-  <h2 ngbAutofocus class="header-text">{{marker.label}}</h2>
-  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
-</div>
-
-<div class="modal-container">
-  <img alt="image of the selected marker" class="modal-image" [src]="markerModalConfig.imageUrl" (click)="close()">
-  <span class="modal-text">
-    <p *ngFor="let paragraph of markerModalConfig.text">{{paragraph}}</p>
-  </span>
+<div class="wrapper">
+  <div class="header-container">
+    <h2 ngbAutofocus class="header-text">{{marker.label}}</h2>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+  
+  <div class="content-container">
+    <img alt="image of the selected marker" class="content-image" [src]="markerModalConfig.imageUrl" (click)="close()">
+    <span class="content-text">
+      <p *ngFor="let paragraph of markerModalConfig.text">{{paragraph}}</p>
+    </span>
+  </div>
 </div>
