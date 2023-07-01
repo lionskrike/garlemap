@@ -19,7 +19,7 @@ export class MapComponent implements AfterViewInit {
   private startingMapMarkerGroup;
 
   private initMap(): void {
-    const initialZoom = this.deviceService.isMobile ? 0 : 1
+    const initialZoom = this.deviceService.isMobile() ? 0 : 1
 
     // map init
     console.log('initializing map');
