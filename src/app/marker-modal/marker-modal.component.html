@@ -1,7 +1,7 @@
 <div class="modal-container">
   <img alt="image of the selected marker" class="modal-image" [src]="markerModalConfig.imageUrl">
   <span class="modal-text">
-    <h1 class="modal-text__header">{{marker.label}}</h1>
+    <h2 class="modal-text__header">{{marker.label}}</h2>
     <p *ngFor="let paragraph of markerModalConfig.text">{{paragraph}}</p>
   </span>
 </div>

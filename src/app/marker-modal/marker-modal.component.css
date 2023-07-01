@@ -17,10 +17,11 @@
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+  padding-right: 10px;
 }
 
 .modal-text__header {
-  width: 381px;
+  text-align: center;
 }
 
 @media (max-width: 440px) {

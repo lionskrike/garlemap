@@ -50,6 +50,12 @@ const markerText = {
   enceladeum: [
     'Part of large industrial complex, currently in ruins, although subterranean infrastructure is still in good repair.',
     'Houses the lunar teleporter, access to which is controlled by the Alliance.'
+  ],
+  forumPatens: [
+    'An Alliance-controlled supply dump garrisoned by the soldiers of the Ist legion.'
+  ],
+  runawayTrain: [
+    'A Mark XLIX passenger train was forced off the tracks by tempered soldiers as it attempted to flee the capital, followed by a brief, but vicious battle. The train\'s bulk was left to rust in the ice and snow, although the Vigiles Urbani recovered the locomotive\'s engine to furnish the generators in Tertium with much-needed spares.'
   ]
 };
 
@@ -65,6 +71,8 @@ const LiminalStationIV = new MapLabel(new L.LatLng(462, 551.5), 'Liminal Station
 const AuxiliaryRadioReceiver = new MapLabel(new L.LatLng(128, 376.5), 'Auxiliary Radio Receiver', Marker.Generic, markerText.auxiliaryRadioReceiver);
 const TappersDen = new MapLabel(new L.LatLng(186.2, 574.4), 'Tapper\'s Den', Marker.Generic, markerText.tappersDen);
 const Enceladeum = new MapLabel(new L.LatLng(844, 253.5), 'The Enceladeum', Marker.Generic, markerText.enceladeum);
+const ForumPatens = new MapLabel(new L.LatLng(683, 283.5), 'Forum Patens', Marker.Generic, markerText.forumPatens);
+const RunawayTrain = new MapLabel(new L.LatLng(474.5, 668), 'Runaway Train', Marker.Generic, markerText.runawayTrain);
 
 export const MarkerPresets: MapLabel[] = [
   TertiumMarker,
@@ -78,5 +86,7 @@ export const MarkerPresets: MapLabel[] = [
   LiminalStationIV,
   AuxiliaryRadioReceiver,
   TappersDen,
-  Enceladeum
+  Enceladeum,
+  ForumPatens,
+  RunawayTrain
 ]
