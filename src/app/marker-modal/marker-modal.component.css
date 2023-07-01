@@ -15,7 +15,7 @@
 
 .content-text {
   overflow-y: scroll;
-  max-height: 380px;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   margin-right: 5px;
@@ -48,8 +48,6 @@
   }
 
   .content-text {
-    overflow-y: scroll;
-    max-height: 380px;
     display: flex;
     flex-direction: column;
     margin-right: 0px;
