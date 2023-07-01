@@ -4,6 +4,7 @@ import {MarkersImagesMap} from "./entities/markers-images-map";
 import {MarkerPresets} from "./entities/map-markers";
 import {NgbModal, NgbModalOptions} from "@ng-bootstrap/ng-bootstrap";
 import {MarkerModalComponent} from "../marker-modal/marker-modal.component";
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-map',
@@ -18,13 +19,15 @@ export class MapComponent implements AfterViewInit {
   private startingMapMarkerGroup;
 
   private initMap(): void {
+    const initialZoom = this.deviceService.isMobile() ? 0 : 1
+
     // map init
     console.log('initializing map');
     this.map = L.map('map', {
-      maxZoom: 24,
-      minZoom: 1,
+      maxZoom: 3,
+      minZoom: 0,
       crs: L.CRS.Simple
-    }).setView([1024, 0], 1);
+    }).setView([1024, 0], initialZoom);
     this.map.setMaxBounds(new L.LatLngBounds([0,1024], [1024,0]));
     let imageUrl = `assets/images/garlemald-map.png`;
     let imageBounds = [[1024,0],[0,1024]];
@@ -36,7 +39,8 @@ export class MapComponent implements AfterViewInit {
   }
 
   constructor(
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private deviceService: DeviceDetectorService
   ) {
   }
 
@@ -45,34 +49,19 @@ export class MapComponent implements AfterViewInit {
 
     this.map.on("click", event => {
       const coord = event.latlng; // get the coordinates
-      this.coordMessage = "Lat: " + coord.lat + ". Long: " + coord.lng;
-
-      // this.coordsList.push(coord);
-      // let lat = coord.lat;
-      // let lng = coord.lng;
-      // let newMarker = L.circleMarker([lat, lng], {radius: 2}).addTo(this.userMarkerGroup);
-      // if(this.lastMarker !== undefined) {
-      //   this.drawLine(newMarker, this.lastMarker);
-      //   this.pathDistanceFt += MapComponent.getDistanceFeet(this.coordsList[this.coordsList.length-1],this.coordsList[this.coordsList.length-2]);
-      // }
-      // this.lastMarker = newMarker;
+      this.coordMessage = "Lat: " + coord.lat + ". Long: " + coord.lng; 
     });
   }
 
   private openModal(event) {
     const modalOptions: NgbModalOptions = {
       centered: true,
-      size: 'xl',
-      scrollable: true
+      size: 'lg'
     }
 
-    const marker = MarkerPresets.find((marker) => {
-      if(marker.coords === event.latlng) {
-        return marker;
-      }
-    })
+    const marker = MarkerPresets.find((marker) => marker.coords === event.latlng)
     const modalRef = this.modalService.open(MarkerModalComponent, modalOptions);
-    modalRef.componentInstance.markerLabel = marker.label;
+    modalRef.componentInstance.marker = marker;
   }
 
   private initMapLabels(): void {

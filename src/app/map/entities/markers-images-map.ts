@@ -13,7 +13,7 @@ const TertiumIcon = L.icon({
   popupAnchor: [0,0],
 })
 
-export const MarkersImagesMap: Map<Marker, string> = new Map([
+export const MarkersImagesMap: Map<Marker, any> = new Map([
   [Marker.Tertium, TertiumIcon],
   [Marker.Generic, GenericIcon]
 ]);
