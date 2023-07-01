@@ -1,7 +1,11 @@
+<div class="header-container">
+  <h2 ngbAutofocus class="header-text">{{marker.label}}</h2>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+
 <div class="modal-container">
-  <img alt="image of the selected marker" class="modal-image" [src]="markerModalConfig.imageUrl">
+  <img alt="image of the selected marker" class="modal-image" [src]="markerModalConfig.imageUrl" (click)="close()">
   <span class="modal-text">
-    <h2 class="modal-text__header">{{marker.label}}</h2>
     <p *ngFor="let paragraph of markerModalConfig.text">{{paragraph}}</p>
   </span>
 </div>

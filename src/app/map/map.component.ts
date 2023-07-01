@@ -45,9 +45,7 @@ export class MapComponent implements AfterViewInit {
 
     this.map.on("click", event => {
       const coord = event.latlng; // get the coordinates
-      this.coordMessage = "Lat: " + coord.lat + ". Long: " + coord.lng;
-
-      
+      this.coordMessage = "Lat: " + coord.lat + ". Long: " + coord.lng; 
     });
   }
 

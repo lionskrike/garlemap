@@ -13,15 +13,23 @@
 
 .modal-text {
   overflow-y: scroll;
-  max-height: 800px;
+  max-height: 380px;
   display: flex;
   flex-direction: column;
   padding-top: 20px;
   padding-right: 10px;
 }
 
-.modal-text__header {
+.header-text {
   text-align: center;
+}
+
+.header-container {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px lightgray solid;
 }
 
 @media (max-width: 440px) {
@@ -35,7 +43,7 @@
   .modal-text {
     display: block;
     overflow-y: scroll;
-    max-height: 800px;
+    max-height: 380px;
     padding-left: 5px;
     padding-right: 5px
   }
