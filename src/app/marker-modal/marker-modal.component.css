@@ -15,9 +15,12 @@
   overflow-y: scroll;
   max-height: 800px;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 20px;
+}
+
+.modal-text__header {
+  width: 381px;
 }
 
 @media (max-width: 440px) {

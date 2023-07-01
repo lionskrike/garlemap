@@ -47,32 +47,20 @@ export class MapComponent implements AfterViewInit {
       const coord = event.latlng; // get the coordinates
       this.coordMessage = "Lat: " + coord.lat + ". Long: " + coord.lng;
 
-      // this.coordsList.push(coord);
-      // let lat = coord.lat;
-      // let lng = coord.lng;
-      // let newMarker = L.circleMarker([lat, lng], {radius: 2}).addTo(this.userMarkerGroup);
-      // if(this.lastMarker !== undefined) {
-      //   this.drawLine(newMarker, this.lastMarker);
-      //   this.pathDistanceFt += MapComponent.getDistanceFeet(this.coordsList[this.coordsList.length-1],this.coordsList[this.coordsList.length-2]);
-      // }
-      // this.lastMarker = newMarker;
+      
     });
   }
 
   private openModal(event) {
     const modalOptions: NgbModalOptions = {
       centered: true,
-      size: 'xl',
+      size: 'lg',
       scrollable: true
     }
 
-    const marker = MarkerPresets.find((marker) => {
-      if(marker.coords === event.latlng) {
-        return marker;
-      }
-    })
+    const marker = MarkerPresets.find((marker) => marker.coords === event.latlng)
     const modalRef = this.modalService.open(MarkerModalComponent, modalOptions);
-    modalRef.componentInstance.markerLabel = marker.label;
+    modalRef.componentInstance.marker = marker;
   }
 
   private initMapLabels(): void {

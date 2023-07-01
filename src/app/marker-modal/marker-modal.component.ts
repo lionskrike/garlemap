@@ -1,21 +1,22 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { MarkerModalConfig } from './entities/marker-modal-config';
+import { Marker } from '../map/entities/marker';
+import { MapLabel } from '../map/types/map-label';
 
 @Component({
   selector: 'app-marker-modal',
   templateUrl: './marker-modal.component.html',
   styleUrls: ['./marker-modal.component.css']
 })
-export class MarkerModalComponent {
-  @Input() markerLabel: string;
-  markerModalConfig: MarkerModalConfig = {
-    imageUrl: 'assets/images/tertium.svg',
-    text: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      'Bibendum ut tristique et egestas. Vitae elementum curabitur vitae nunc sed velit. Turpis tincidunt id aliquet risus feugiat. Accumsan in nisl nisi scelerisque eu.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      'Bibendum ut tristique et egestas. Vitae elementum curabitur vitae nunc sed velit. Turpis tincidunt id aliquet risus feugiat. Accumsan in nisl nisi scelerisque eu.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    ]
+export class MarkerModalComponent implements OnInit {
+  marker: MapLabel = undefined;
+
+  markerModalConfig: MarkerModalConfig;
+
+  ngOnInit() {
+    this.markerModalConfig = {
+      imageUrl: 'assets/images/tertium.svg',
+      text: this.marker?.text
+    }
   }
 }
