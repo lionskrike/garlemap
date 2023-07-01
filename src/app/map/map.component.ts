@@ -56,8 +56,7 @@ export class MapComponent implements AfterViewInit {
   private openModal(event) {
     const modalOptions: NgbModalOptions = {
       centered: true,
-      size: 'lg',
-      scrollable: true
+      size: 'lg'
     }
 
     const marker = MarkerPresets.find((marker) => marker.coords === event.latlng)
