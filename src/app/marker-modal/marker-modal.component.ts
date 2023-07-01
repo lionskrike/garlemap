@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { MarkerModalConfig } from './entities/marker-modal-config';
-import { Marker } from '../map/entities/marker';
 import { MapLabel } from '../map/types/map-label';
 
 @Component({

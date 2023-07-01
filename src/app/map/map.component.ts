@@ -22,7 +22,7 @@ export class MapComponent implements AfterViewInit {
     console.log('initializing map');
     this.map = L.map('map', {
       maxZoom: 24,
-      minZoom: 1,
+      minZoom: 0,
       crs: L.CRS.Simple
     }).setView([1024, 0], 1);
     this.map.setMaxBounds(new L.LatLngBounds([0,1024], [1024,0]));
