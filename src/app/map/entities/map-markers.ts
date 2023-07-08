@@ -56,11 +56,18 @@ const markerText = {
   ],
   runawayTrain: [
     'A Mark XLIX passenger train was forced off the tracks by tempered soldiers as it attempted to flee the capital, followed by a brief, but vicious battle. The train\'s bulk was left to rust in the ice and snow, although the Vigiles Urbani recovered the locomotive\'s engine to furnish the generators in Tertium with much-needed spares.'
+  ],
+  senatusStation: [
+    'An underground station, repurposed into a shelter for surviving government officials.',
+    'The area is restricted to most non-Garleans and boasts tight security despite being heavily reliant on the Alliance aid.'
+  ],
+  commsTower: [
+    'Headquarter of the Vigiles radiocommunication team. Has the ability to broadcast and track signals across most of the Regios.'
   ]
 };
 
 const TertiumMarker = new MapLabel(new L.LatLng(704, 763), 'Tertium', Marker.Tertium, markerText.tertium);
-const CampBrokenGlassMarker = new MapLabel(new L.LatLng(286, 320), 'Camp Broken Glass', Marker.Generic, markerText.brokenGlass);
+const CampBrokenGlassMarker = new MapLabel(new L.LatLng(292, 328.25), 'Camp Broken Glass', Marker.Contingent, markerText.brokenGlass);
 const SenateMarker = new MapLabel(new L.LatLng(830, 400), 'Senaculum Imperialis', Marker.Generic, markerText.senate);
 const VictorsSpoilsMarker = new MapLabel(new L.LatLng(425, 801), 'Victors\' Spoils', Marker.Generic, markerText.victorsSpoils);
 const ForumSoliusMarker = new MapLabel(new L.LatLng(797, 716), 'Forum Solius', Marker.Generic, markerText.forumSolius);
@@ -71,8 +78,10 @@ const LiminalStationIV = new MapLabel(new L.LatLng(462, 551.5), 'Liminal Station
 const AuxiliaryRadioReceiver = new MapLabel(new L.LatLng(128, 376.5), 'Auxiliary Radio Receiver', Marker.Generic, markerText.auxiliaryRadioReceiver);
 const TappersDen = new MapLabel(new L.LatLng(186.2, 574.4), 'Tapper\'s Den', Marker.Generic, markerText.tappersDen);
 const Enceladeum = new MapLabel(new L.LatLng(840.25, 250.375), 'The Enceladeum', Marker.Generic, markerText.enceladeum);
-const ForumPatens = new MapLabel(new L.LatLng(683, 283.5), 'Forum Patens', Marker.Generic, markerText.forumPatens);
+const ForumPatens = new MapLabel(new L.LatLng(686.5, 283.375), 'Forum Patens', Marker.Generic, markerText.forumPatens);
 const RunawayTrain = new MapLabel(new L.LatLng(474.5, 668), 'Runaway Train', Marker.Generic, markerText.runawayTrain);
+const SenatusStation = new MapLabel(new L.LatLng(865.75, 326.625), 'Senatus Station', Marker.Generic, markerText.senatusStation);
+const CommsTower = new MapLabel(new L.LatLng(776.625, 757.25), 'Comms Tower', Marker.Generic, markerText.commsTower);
 
 export const MarkerPresets: MapLabel[] = [
   TertiumMarker,
@@ -88,5 +97,7 @@ export const MarkerPresets: MapLabel[] = [
   TappersDen,
   Enceladeum,
   ForumPatens,
-  RunawayTrain
+  RunawayTrain,
+  SenatusStation,
+  CommsTower
 ]

@@ -13,7 +13,14 @@ const TertiumIcon = L.icon({
   popupAnchor: [0,0],
 })
 
+const ContingentIcon = L.icon({
+  iconUrl: `assets/images/tertium.svg`,
+  iconSize: [40,40],
+  popupAnchor: [0,0],
+})
+
 export const MarkersImagesMap: Map<Marker, any> = new Map([
   [Marker.Tertium, TertiumIcon],
-  [Marker.Generic, GenericIcon]
+  [Marker.Generic, GenericIcon],
+  [Marker.Contingent, ContingentIcon]
 ]);
