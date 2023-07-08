@@ -2,8 +2,8 @@ import {Marker} from "./marker";
 import * as L from 'leaflet';
 
 const GenericIcon = L.icon({
-  iconUrl: `assets/images/marker.png`,
-  iconSize: [20,20],
+  iconUrl: `assets/images/garlemald-chain.png`,
+  iconSize: [40,40],
   popupAnchor: [0,0],
 })
 

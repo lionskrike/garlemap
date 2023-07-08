@@ -70,7 +70,7 @@ const PalatiumNovum = new MapLabel(new L.LatLng(731.25, 552), 'Palatium Novum', 
 const LiminalStationIV = new MapLabel(new L.LatLng(462, 551.5), 'Liminal Station IV', Marker.Generic, markerText.liminalStationIV);
 const AuxiliaryRadioReceiver = new MapLabel(new L.LatLng(128, 376.5), 'Auxiliary Radio Receiver', Marker.Generic, markerText.auxiliaryRadioReceiver);
 const TappersDen = new MapLabel(new L.LatLng(186.2, 574.4), 'Tapper\'s Den', Marker.Generic, markerText.tappersDen);
-const Enceladeum = new MapLabel(new L.LatLng(844, 253.5), 'The Enceladeum', Marker.Generic, markerText.enceladeum);
+const Enceladeum = new MapLabel(new L.LatLng(840.25, 250.375), 'The Enceladeum', Marker.Generic, markerText.enceladeum);
 const ForumPatens = new MapLabel(new L.LatLng(683, 283.5), 'Forum Patens', Marker.Generic, markerText.forumPatens);
 const RunawayTrain = new MapLabel(new L.LatLng(474.5, 668), 'Runaway Train', Marker.Generic, markerText.runawayTrain);
 
